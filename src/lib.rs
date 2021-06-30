@@ -39,9 +39,16 @@ mod api_twitter_soft {
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct User {
+    pub name: String,
+    pub screen_name: String,
+}
+
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Tweet {
     pub created_at: String,
     pub text: String,
+    pub user: User,
 }
 
 impl Tweet {
